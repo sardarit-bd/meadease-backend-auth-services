@@ -8,9 +8,8 @@ const PORT = process.env.AUTH_SERVICE_PORT || 5001;
 
 
 /********** Connect to Database Here **********/
-connectDB();
-connectRedis();
-
+await connectDB();
+await connectRedis();
 
 
 /*********** Start The Server ***********/
