@@ -1,5 +1,4 @@
 /****** core modules import here *******/
-import cors from "cors";
 import express from "express";
 import passport from 'passport';
 import './config/passport.js';
@@ -21,28 +20,6 @@ app.use(passport.initialize());
 /********* Body Data Parse **********/
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
-
-
-/*********** Middleware Here ***********/
-/*********** CORS  Middleware Here ***********/
-const allowedOrigins = [
-    process.env.API_GETWAY_URL,
-    "http://localhost:3000",
-];
-app.use(
-    cors({
-        origin: function (origin, callback) {
-            if (!origin) return callback(null, true); // allow non-browser requests
-            if (allowedOrigins.includes(origin)) {
-                callback(null, true);
-            } else {
-                callback(new Error("Not allowed by CORS"));
-            }
-        },
-        credentials: true,
-    })
-);
-
 
 
 /********** auth Routes Define Here *********/
