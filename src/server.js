@@ -13,12 +13,7 @@ await connectRedis();
 
 
 /*********** Start The Server ***********/
-if (environment === "development") {
   app.listen(PORT, () => {
     console.log(`🚀 Server running on port: ${PORT} in ${environment} mode`);
   });
 
-}
-
-
-export default app;
