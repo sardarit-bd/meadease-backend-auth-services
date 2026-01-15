@@ -11,7 +11,6 @@ const PORT = process.env.AUTH_SERVICE_PORT || 5001;
 await connectDB();
 await connectRedis();
 
-
 /*********** Start The Server ***********/
   app.listen(PORT, () => {
     console.log(`🚀 Server running on port: ${PORT} in ${environment} mode`);

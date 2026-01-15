@@ -8,6 +8,8 @@ import uEmailandIdfinder from '../../utils/uEmailandIdfinder.js';
 
 const getMe = async (req, res, next) => {
 
+  console.log("Get Me called");
+
   const email = uEmailandIdfinder(req, 'email');
 
   const user = await User.findOne({ email }).select('-password');
